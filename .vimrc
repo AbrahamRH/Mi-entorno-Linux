@@ -2,18 +2,16 @@
 " Description: Archivo de configuraion del editor de textos vim, para uso en programacion en diferentes lenguajes
 " @autor: AbrahamRH
 
-
-"=========================TODO===========================
-"   Instalar 
-"   doxygen
-"   gitgutter
-"========================================================
 "========================PLUGINS=========================
 call plug#begin()
 
     Plug 'scrooloose/nerdtree'
     Plug 'kien/ctrlp.vim'
     Plug 'chriskempson/vim-tomorrow-theme'
+    Plug 'vim-scripts/DoxygenToolkit.vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'W0rp/ale'
+    Plug 'itchyny/lightline.vim'
 
 call plug#end()
 "========================================================
@@ -52,9 +50,10 @@ set autowrite			" Permite guardar los cambios cuando se pierde la atencion en el
 set mouse=a			" Permite usar el mouse en cualquier modo
 set noswapfile			" Desabilita los archivos de swap
 set nobackup			" Desabilita los backups de los archivos editados
-set backspace=indent,eol,start
-:let g:NERDTreeWinSize=20
-:let g:tagbar_width=20
+set backspace=indent,eol,start	" Hace que cada retroceso fial de una linea, vuelva la line anterior
+set undofile			" Aun cerrando vim, persiste el historial de cambios
+set undodir=~/.vim/undodir	" Señala la ruta para el archivo de edicion
+set updatetime=100
 
 "=================MAPEO DE LAS TECLAS==========================
 " En el modo normal con F3  activamos NERDTree
@@ -86,5 +85,24 @@ function! CambiarNumerosRelativos()
 		set relativenumber
 	endif
 endfunction
+
+"==================PLUGINS CONG=================
+" Introduce el tamaño de NerdTree
+:let g:NERDTreeWinSize=20
+:let g:tagbar_width=20
+
+" Configuracion de los comentarios
+:let g:DoxygenToolkit_briefTag_pre="@Synopsis "
+:let g:DoxygenToolkit_paramTag_pre="@Param "
+:let g:DoxygenToolkit_returnTag_pre="@Returns "
+:let g:DoxygenToolkit_authorName="AbrahaRH"
+:let g:DoxygenToolkit_blockHeader="-------------------------------"
+:let g:DoxygenToolkit_blockFooter="-------------------------------"
+
+" Colorscheme de la linea de status
+:let g:lightline = {
+	\ 'colorscheme': 'one'
+	\ }
+
 
 
