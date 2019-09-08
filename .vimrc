@@ -12,6 +12,7 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'
     Plug 'W0rp/ale'
     Plug 'itchyny/lightline.vim'
+    Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 "========================================================
@@ -21,32 +22,30 @@ colorscheme Tomorrow-Night-Eighties
 "========================================================
 
 
-" Habilita la sintaxis 
+" Habilita la sintaxis
 set t_Co=256
 syntax on
 
-" Habilita la codificacion en UTF-8 (vim para Windows) 
+" Habilita la codificacion en UTF-8 (vim para Windows)
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 set encoding=utf-8
 
-" Muestra la barra de estado todo el tiempo con el formato indicado 
-set laststatus=2	
+" Muestra la barra de estado todo el tiempo con el formato indicado
+set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 
 set cursorline			" Distingue la linea actual del cursor
 set nocompatible		" Desabilita la compatibilidad con vi
 set autoindent			" Crea una auto indentacipn de la linea anterior
 set smartindent			" Usa una indenatacion intligente para C
-set softtabstop=4	  	" Crea una indentacion sintetica de 4 espacios
-set shiftwidth=4		" Indenta con 4 espacios nuevamente
 set textwidth=120		" Coloca la anchura de la pantalla a 120 caracteres
 set colorcolumn=120		" Coloca una linea en la columna en el caracter 120
 set number			" Enciende la linea de numeros
 set showmatch			" Subraya las llaves, parentesis, etc...
 set wildmenu			" En el modo comando habiblita el menu de autocompletar
-set autowrite			" Permite guardar los cambios cuando se pierde la atencion en el archivo 
+set autowrite			" Permite guardar los cambios cuando se pierde la atencion en el archivo
 set mouse=a			" Permite usar el mouse en cualquier modo
 set noswapfile			" Desabilita los archivos de swap
 set nobackup			" Desabilita los backups de los archivos editados
@@ -60,8 +59,8 @@ set updatetime=100
 command NT NERDTree
 nmap <F3> :NERDTreeToggle<cr>
 
-" En el modo normal y insercion F2 guardara los cambios realizados al archivo 
-nmap <F2> :w<CR> 
+" En el modo normal y insercion F2 guardara los cambios realizados al archivo
+nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>
 
 " Cambia entre los numeros relativos a normales en modo insercion y normal
