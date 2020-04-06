@@ -1,6 +1,6 @@
 " VIM Configuration File
 " Description: Archivo de configuraion del editor de textos vim, para uso en programacion en diferentes lenguajes
-" @autor: AbrahamRH
+" Autor: AbrahamRH
 
 "========================PLUGINS=========================
 call plug#begin()
@@ -13,6 +13,11 @@ call plug#begin()
     Plug 'W0rp/ale'
     Plug 'itchyny/lightline.vim'
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'vim-scripts/cSyntaxAfter'
+    Plug 'vim-scripts/java.vim'
+    Plug 'PotatoesMaster/i3-vim-syntax'
+    Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 "========================================================
@@ -36,6 +41,8 @@ set encoding=utf-8
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 
+
+set wildmode=longest,list,full  " Habilita el autocompletado
 set cursorline			" Distingue la linea actual del cursor
 set nocompatible		" Desabilita la compatibilidad con vi
 set autoindent			" Crea una auto indentacipn de la linea anterior
@@ -53,6 +60,7 @@ set backspace=indent,eol,start	" Hace que cada retroceso fial de una linea, vuel
 set undofile			" Aun cerrando vim, persiste el historial de cambios
 set undodir=~/.vim/undodir	" Señala la ruta para el archivo de edicion
 set updatetime=100
+set splitbelow splitright	" Ls ventana nuevas se abren a la derecha o abajo
 
 "=================MAPEO DE LAS TECLAS==========================
 " En el modo normal con F3  activamos NERDTree
@@ -85,16 +93,19 @@ function! CambiarNumerosRelativos()
 	endif
 endfunction
 
-"==================PLUGINS CONG=================
+" Borra los espacios en blanco al guardar el archivo
+" autocmd BufWritePre * %s\s\+$//e
+
+"==================PLUGINS CONFG=================
 " Introduce el tamaño de NerdTree
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
 
 " Configuracion de los comentarios
-:let g:DoxygenToolkit_briefTag_pre="@Synopsis "
-:let g:DoxygenToolkit_paramTag_pre="@Param "
-:let g:DoxygenToolkit_returnTag_pre="@Returns "
-:let g:DoxygenToolkit_authorName="AbrahaRH"
+:let g:DoxygenToolkit_briefTag_pre="@brief "
+:let g:DoxygenToolkit_paramTag_pre="@param "
+:let g:DoxygenToolkit_returnTag_pre="@return "
+:let g:DoxygenToolkit_authorName="AbrahamRH"
 :let g:DoxygenToolkit_blockHeader="-------------------------------"
 :let g:DoxygenToolkit_blockFooter="-------------------------------"
 
@@ -103,5 +114,20 @@ endfunction
 	\ 'colorscheme': 'one'
 	\ }
 
+" Configuracion de cSyntaxAfter predeterminada
+" autocmd! FileType c,cpp,java call CSyntaxAfter()
+
+" Configuracion de Multicursor
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 
