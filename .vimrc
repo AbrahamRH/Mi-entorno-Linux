@@ -7,7 +7,6 @@ call plug#begin()
 
     Plug 'scrooloose/nerdtree'
     Plug 'kien/ctrlp.vim'
-    Plug 'chriskempson/vim-tomorrow-theme'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'W0rp/ale'
@@ -18,18 +17,28 @@ call plug#begin()
     Plug 'vim-scripts/java.vim'
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'terryma/vim-multiple-cursors'
-
+    Plug 'gilgigilgil/anderson.vim'
+    Plug 'nightsense/carbonized'
+    Plug 'nightsense/office'
+    "Plug 'neoclide/coc.nvim', { 'branch' : 'relase' }
+    "Temas para el editor
+    Plug 'morhetz/gruvbox'
+    Plug 'chriskempson/vim-tomorrow-theme'
 call plug#end()
-"========================================================
 
-colorscheme Tomorrow-Night-Eighties
-
-"========================================================
-
+set nolist
 
 " Habilita la sintaxis
 set t_Co=256
-syntax on
+syntax enable
+
+"========================================================
+
+"  colorscheme Tomorrow-Night-Eighties
+"  colorscheme office-dark
+colorscheme gruvbox
+
+"========================================================
 
 " Habilita la codificacion en UTF-8 (vim para Windows)
 set enc=utf-8
@@ -62,6 +71,10 @@ set undodir=~/.vim/undodir	" Señala la ruta para el archivo de edicion
 set updatetime=100
 set splitbelow splitright	" Ls ventana nuevas se abren a la derecha o abajo
 
+" Nuevos cambios
+set noshowmode
+set clipboard=unnamed
+set numberwidth=1
 "=================MAPEO DE LAS TECLAS==========================
 " En el modo normal con F3  activamos NERDTree
 command NT NERDTree
@@ -75,11 +88,6 @@ imap <F2> <ESC>:w<CR>
 nmap <F5> :call CambiarNumerosRelativos()<CR>
 imap <F5> <Esc>:call CambiarNumerosRelativos()<CR>a
 
-"==============================================================
-
-" Crea una excepcion de comando para los siguientes lenguajes
-autocmd FileType html,css,sass,scss,javascript,json.*.coffee
-			\ setlocal shiftwidth=2 softtabstop=2
 
 "==================FUNCIONES====================
 
@@ -101,7 +109,7 @@ endfunction
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
 
-" Configuracion de los comentarios
+" Configuracion de los comentarios de Doxygen
 :let g:DoxygenToolkit_briefTag_pre="@brief "
 :let g:DoxygenToolkit_paramTag_pre="@param "
 :let g:DoxygenToolkit_returnTag_pre="@return "
@@ -114,8 +122,6 @@ endfunction
 	\ 'colorscheme': 'one'
 	\ }
 
-" Configuracion de cSyntaxAfter predeterminada
-" autocmd! FileType c,cpp,java call CSyntaxAfter()
 
 " Configuracion de Multicursor
 let g:multi_cursor_use_default_mapping=0
