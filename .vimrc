@@ -10,10 +10,12 @@ call plug#begin()
     Plug 'kien/ctrlp.vim'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     Plug 'airblade/vim-gitgutter'
-"    Plug 'W0rp/ale'
+    Plug 'W0rp/ale'
     Plug 'itchyny/lightline.vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'Yggdroot/indentLine'
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'easymotion/vim-easymotion'
     " Sintaxis
     Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/cSyntaxAfter'
@@ -72,29 +74,35 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strf
 
 
 set wildmode=longest,list,full  " Habilita el autocompletado
-set cursorline			" Distingue la linea actual del cursor
-set nocompatible		" Desabilita la compatibilidad con vi
-set autoindent			" Crea una auto indentacipn de la linea anterior
-set smartindent			" Usa una indenatacion intligente para C
-set textwidth=120		" Coloca la anchura de la pantalla a 120 caracteres
-set colorcolumn=120		" Coloca una linea en la columna en el caracter 120
-set number		    	" Enciende la linea de numeros
-set showmatch			" Subraya las llaves, parentesis, etc...
-set wildmenu			" En el modo comando habiblita el menu de autocompletar
-set autowrite			" Permite guardar los cambios cuando se pierde la atencion en el archivo
-set mouse=a		    	" Permite usar el mouse en cualquier modo
-set noswapfile			" Desabilita los archivos de swap
-set nobackup			" Desabilita los backups de los archivos editados
+set cursorline                  " Distingue la linea actual del cursor
+set nocompatible                " Desabilita la compatibilidad con vi
+set autoindent                  " Crea una auto indentacipn de la linea anterior
+set smartindent                 " Usa una indenatacion intligente para C
+set textwidth=120               " Coloca la anchura de la pantalla a 120 caracteres
+set colorcolumn=120             " Coloca una linea en la columna en el caracter 120
+set number                      " Enciende la linea de numeros
+set showmatch                   " Subraya las llaves, parentesis, etc...
+set wildmenu                    " En el modo comando habiblita el menu de autocompletar
+set autowrite                   " Permite guardar los cambios cuando se pierde la atencion en el archivo
+set mouse-=a                    " Permite usar el mouse en cualquier modo
+set noswapfile                  " Desabilita los archivos de swap
+set nobackup                    " Desabilita los backups de los archivos editados
+set nowritebackup
 set backspace=indent,eol,start	" Hace que cada retroceso fial de una linea, vuelva la line anterior
 set undofile	        		" Aun cerrando vim, persiste el historial de cambios
 set undodir=~/.vim/undodir  	" Señala la ruta para el archivo de edicion
 set updatetime=100
 set splitbelow splitright   	" Ls ventana nuevas se abren a la derecha o abajo
+set cmdheight=2                 " Da más espacos
 
 " Nuevos cambios
 set noshowmode
 set clipboard=unnamed
 set numberwidth=1
+
+" ==================MAPEO======================
+
+let mapleader=" "
 
 " En el modo normal con F3  activamos NERDTree
 command NT NERDTree
@@ -108,7 +116,7 @@ imap <F2> <ESC>:w<CR>
 nmap <F5> :call CambiarNumerosRelativos()<CR>
 imap <F5> <Esc>:call CambiarNumerosRelativos()<CR>a
 
-
+imap ii <Esc><CR>
 "==================FUNCIONES====================
 
 " Funcion utilizada para el mapero de a tecla <F5>
@@ -121,18 +129,12 @@ function! CambiarNumerosRelativos()
 	endif
 endfunction
 
-" Borra los espacios en blanco al guardar el archivo
-
-
-
-" Cambio de modo comando 
-
-nmap ii <Esc>
 
 "==================PLUGINS CONFG=================
 " Introduce el tamaño de NerdTree
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
+let NERDTreeQuitOnOpen=1
 
 " Configuracion de los comentarios de Doxygen
 :let g:DoxygenToolkit_briefTag_pre="@brief "
@@ -161,23 +163,43 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
+"CoC
+
 " GoTo definitions
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Juntar el plugi de Ale con Coc
-"let g:ale_disable_lsp = 1 
-"
+" Renombrar simbolo
+nmap <leader>rn <Plug>(coc-rename)
+
+" Gatillo con el tabulador 
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+"Juntar el plugin de Ale con Coc
+let g:ale_disable_lsp = 1 
+
+" easymotion
+nmap <leader>s <Plug>(easymotion-s2)
 
 " NERDcommenter
-
 let g:NERDSpaceDelims = 1  " Agregar un espacio después del delimitador del comentario
 let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
 
 " IndentLines
 " No mostrar en ciertos tipos de buffers y archivos
-
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+
+
