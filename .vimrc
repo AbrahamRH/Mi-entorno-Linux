@@ -16,6 +16,7 @@ call plug#begin()
     Plug 'Yggdroot/indentLine'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'easymotion/vim-easymotion'
+    Plug 'preservim/tagbar'
     " Sintaxis
     Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/cSyntaxAfter'
@@ -99,7 +100,11 @@ set cmdheight=2                 " Da más espacos
 set noshowmode
 set clipboard=unnamed
 set numberwidth=1
-
+" =================FOLDING=====================
+set foldmethod=syntax
+set foldcolumn=1
+let javascript_fold=1
+set foldlevelstart=0
 " ==================MAPEO======================
 
 let mapleader=" "
@@ -202,4 +207,7 @@ let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
-
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width = 45
+let g:tagbar_show_data_type = 1
