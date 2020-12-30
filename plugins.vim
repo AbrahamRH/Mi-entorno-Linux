@@ -6,7 +6,6 @@ call plug#begin()
     Plug 'kien/ctrlp.vim'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     Plug 'airblade/vim-gitgutter'
-    Plug 'W0rp/ale'
     Plug 'itchyny/lightline.vim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'Yggdroot/indentLine'
@@ -22,14 +21,14 @@ call plug#begin()
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'jaxbot/semantic-highlight.vim'
-    Plug 'sainnhe/gruvbox-material'
-    " Auto completado
+    " Autocompletado
     Plug 'neoclide/coc.nvim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/nerdcommenter'
     " Temas para el editor
+    Plug 'sainnhe/gruvbox-material'
     Plug 'morhetz/gruvbox'
     Plug 'nightsense/carbonized'
     Plug 'nightsense/office'
