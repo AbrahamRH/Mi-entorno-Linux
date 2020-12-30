@@ -1,15 +1,9 @@
 " VIM Configuration File
 " Description: Archivo de configuration del editor de textos vim, para uso en programacion en diferentes lenguajes
 " Autor: AbrahamRH
-    
-"========================PLUGINS=========================
-so ~/.vim/plugins.vim
-"======================COLORSCHEME=======================
-so ~/.vim/themes.vim
-" ========================MAPEO==========================
-so ~/.vim/maps.vim
-"========================================================
-" Habilita la sintaxis
+
+"=====================CONFIGURATION======================== 
+"Habilita la sintaxis
 set t_Co=256
 syntax enable
 
@@ -43,13 +37,12 @@ set backspace=indent,eol,start	" Hace que cada retroceso fial de una linea, vuel
 set undofile	        		" Aun cerrando vim, persiste el historial de cambios
 set undodir=~/.vim/undodir  	" Señala la ruta para el archivo de edicion
 set updatetime=100
-set splitbelow splitright   	" Ls ventana nuevas se abren a la derecha o abajo
-set cmdheight=2                 " Da más espacos
-
-" Nuevos cambios
+set splitbelow splitright   	" La ventana nuevas se abren a la derecha o abajo
+set cmdheight=2                 " Da más espacios
 set noshowmode
 set clipboard=unnamed
 set numberwidth=1
+
 " =================FOLDING=====================
 autocmd Filetype python set foldmethod=indent
 autocmd Filetype html set foldmethod=manual
@@ -58,15 +51,9 @@ set foldcolumn=1
 let javascript_fold=1
 let python_fold=1
 set foldlevelstart=0
-"==================FUNCIONES====================
 
-" Funcion utilizada para el mapero de a tecla <F5>
-function! CambiarNumerosRelativos()
-	if &relativenumber == 1
-		set norelativenumber
-		set number
-	else
-		set relativenumber
-	endif
-endfunction
+so ~/.vim/plugins.vim
+so ~/.vim/plugins-config.vim
+so ~/.vim/themes.vim
+so ~/.vim/maps.vim
 
