@@ -26,3 +26,16 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+"==================FUNCIONES====================
+
+" Funcion utilizada para el mapero de a tecla <F5>
+function! CambiarNumerosRelativos()
+	if &relativenumber == 1
+		set norelativenumber
+		set number
+	else
+		set relativenumber
+	endif
+endfunction
+
