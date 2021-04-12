@@ -39,10 +39,10 @@ Editando un archivo de C++
 
 ## Plugins
 
-Si desear ver que Plugins estan instalados actualmente revisa el archivo [plugins.vim](plugins.vim) y para poder
+Si deseas ver que Plugins estan instalados actualmente revisa el archivo [plugins.vim](plugins.vim) y para poder
 configurarlos (como por ejemplo la documentación de Doxygen) ve a [plugins-config.vim](plugins-config.vim).
 
-Para realizar algunas configuraciones de CoC o Kite se recomienda realizarlas dentro del directorio `~/.config/nvim`
+Para realizar algunas configuraciones de CoC o Kite se recomienda realizarlas dentro del directorio `~/.config/nvim/`
 
 ## Mapeos
 
