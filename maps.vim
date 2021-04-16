@@ -27,6 +27,13 @@ nmap <leader>rn <Plug>(coc-rename)
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" Abrir archivos con xdg
+nnoremap gX :silent :execute
+            \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
+
+" Quitar el subrayado al buscar
+map <esc> :noh<cr>
+
 "==================FUNCIONES====================
 
 " Funcion utilizada para el mapero de a tecla <F5>
