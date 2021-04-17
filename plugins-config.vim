@@ -90,4 +90,11 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 "================= Vimspector ==================
-" let g:vimspector_enable_mappings = 'HUMAN'
+nmap <leader>dd :call vimspector#Launch()<CR>
+nmap <leader>dx :VimspectorReset<CR>
+nmap <leader>de :VimspectorEval
+nmap <leader>do :VimspectorShowOutput
+nmap <leader>ds :call vimspector#Stop()<CR>
+nmap <leader>db :call vimspector#ToggleBreakpoint()<CR>
+nmap <F9> :call vimspector#StepOver()
+nmap <F4> :call vimspector#StepInto()
