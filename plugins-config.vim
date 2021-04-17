@@ -84,3 +84,10 @@ let g:tagbar_show_data_type = 1
 "==================== Kite ======================
 let g:kite_supported_languages = ['javascript', 'python', 'c','cpp']
 
+
+"=============== Goyo y Limelight ==============
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+"================= Vimspector ==================
+" let g:vimspector_enable_mappings = 'HUMAN'

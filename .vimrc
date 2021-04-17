@@ -52,6 +52,8 @@ let javascript_fold=1
 let python_fold=1
 set foldlevelstart=0
 
+packadd! vimspector
+
 so ~/.vim/plugins.vim
 so ~/.vim/plugins-config.vim
 so ~/.vim/themes.vim

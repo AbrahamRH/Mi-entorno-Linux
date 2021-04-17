@@ -1,0 +1,89 @@
+{
+  "adapters": {
+    "CodeLLDB": {
+      "command": [
+        "${gadgetDir}/CodeLLDB/adapter/codelldb",
+        "--port",
+        "${unusedLocalPort}"
+      ],
+      "configuration": {
+        "args": [],
+        "cargo": {},
+        "cwd": "${workspaceRoot}",
+        "env": {},
+        "name": "lldb",
+        "terminal": "integrated",
+        "type": "lldb"
+      },
+      "name": "CodeLLDB",
+      "port": "${unusedLocalPort}",
+      "type": "CodeLLDB"
+    },
+    "debugpy": {
+      "command": [
+        "/usr/bin/python3",
+        "${gadgetDir}/debugpy/build/lib/debugpy/adapter"
+      ],
+      "configuration": {
+        "python": "/usr/bin/python3",
+        "subProcess": false
+      },
+      "name": "debugpy"
+    },
+    "multi-session": {
+      "host": "${host}",
+      "port": "${port}"
+    },
+    "vscode-bash": {
+      "command": [
+        "node",
+        "${gadgetDir}/vscode-bash-debug/out/bashDebug.js"
+      ],
+      "configuration": {
+        "args": [],
+        "cwd": "${workspaceRoot}",
+        "env": {},
+        "pathBash": "bash",
+        "pathBashdb": "${BASHDB_HOME}/bashdb",
+        "pathBashdbLib": "${BASHDB_HOME}",
+        "pathCat": "cat",
+        "pathMkfifo": "mkfifo",
+        "pathPkill": "pkill",
+        "program": "${file}",
+        "request": "launch",
+        "terminalKind": "integrated",
+        "type": "bashdb"
+      },
+      "name": "bashdb",
+      "variables": {
+        "BASHDB_HOME": "${gadgetDir}/vscode-bash-debug/bashdb_dir"
+      }
+    },
+    "vscode-cpptools": {
+      "attach": {
+        "pidProperty": "processId",
+        "pidSelect": "ask"
+      },
+      "command": [
+        "${gadgetDir}/vscode-cpptools/debugAdapters/OpenDebugAD7"
+      ],
+      "configuration": {
+        "args": [],
+        "cwd": "${workspaceRoot}",
+        "environment": [],
+        "type": "cppdbg"
+      },
+      "name": "cppdbg"
+    },
+    "vscode-go": {
+      "command": [
+        "node",
+        "${gadgetDir}/vscode-go/dist/debugAdapter.js"
+      ],
+      "configuration": {
+        "cwd": "${workspaceRoot}"
+      },
+      "name": "delve"
+    }
+  }
+}

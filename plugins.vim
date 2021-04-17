@@ -12,6 +12,10 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'easymotion/vim-easymotion'
     Plug 'preservim/tagbar'
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'puremourning/vimspector'
     " Sintaxis
     Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/cSyntaxAfter'
