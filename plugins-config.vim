@@ -88,5 +88,3 @@ let g:kite_supported_languages = ['javascript', 'python', 'c','cpp']
 "=============== Goyo y Limelight ==============
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-
-"================= Vimspector ==================

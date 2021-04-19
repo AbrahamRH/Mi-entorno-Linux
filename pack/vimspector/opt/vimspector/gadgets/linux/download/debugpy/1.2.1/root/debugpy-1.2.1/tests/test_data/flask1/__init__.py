@@ -1,3 +1,0 @@
-import debuggee
-
-debuggee.setup()

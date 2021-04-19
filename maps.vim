@@ -34,16 +34,6 @@ nnoremap gX :silent :execute
 " Quitar el subrayado al buscar
 map <esc> :noh<cr>
 
-" Vimspector
-nmap <leader>ds :call vimspector#Launch()<CR>
-nmap <leader>dx :VimspectorReset<CR>
-nmap <leader>de <Plug>VimspectorEval
-nmap <leader>do <Plug>VimspectorShowOutput
-nmap <leader>ds :call vimspector#Stop()<CR>
-nmap <leader>db :call vimspector#ToggleBreakpoint()<CR>
-nmap <F9> :call vimspector#StepOver()<CR>
-nmap <F4> :call vimspector#StepInto()<CR>
-
 "==================FUNCIONES====================
 
 " Funcion utilizada para el mapero de a tecla <F5>
