@@ -82,7 +82,7 @@ let g:tagbar_width = 45
 let g:tagbar_show_data_type = 1
 
 "==================== Kite ======================
-let g:kite_supported_languages = ['javascript', 'python', 'c','cpp']
+let g:kite_supported_languages = ['*']
 
 
 "=============== Goyo y Limelight ==============
