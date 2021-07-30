@@ -25,7 +25,7 @@ call plug#begin()
     Plug 'terryma/vim-multiple-cursors'
     Plug 'jaxbot/semantic-highlight.vim'
     " Autocompletado
-    Plug 'neoclide/coc.nvim', {'branch','release'}
+    Plug 'neoclide/coc.nvim', {'branch':'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'tpope/vim-surround'
