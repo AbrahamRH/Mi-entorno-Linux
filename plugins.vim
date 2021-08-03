@@ -16,6 +16,7 @@ call plug#begin()
     Plug 'junegunn/limelight.vim'
     Plug 'tpope/vim-fugitive'
     " Sintaxis
+    Plug 'frazrepo/vim-rainbow'
     Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/cSyntaxAfter'
     Plug 'vim-scripts/java.vim'
@@ -24,19 +25,17 @@ call plug#begin()
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'jaxbot/semantic-highlight.vim'
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
     " Autocompletado
-    Plug 'neoclide/coc.nvim', {'branch':'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'alvan/vim-closetag'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/nerdcommenter'
     " Temas para el editor
     Plug 'sainnhe/gruvbox-material'
-    Plug 'morhetz/gruvbox'
-    Plug 'nightsense/carbonized'
-    Plug 'nightsense/office'
-    Plug 'chriskempson/vim-tomorrow-theme'
     Plug 'franbach/miramare'
-    Plug 'gryf/wombat256grf'
+    Plug 'ghifarit53/tokyonight-vim'
+    Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 

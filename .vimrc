@@ -42,6 +42,8 @@ set cmdheight=2                 " Da más espacios
 set noshowmode
 set clipboard=unnamed
 set numberwidth=1
+set shortmess+=c
+set signcolumn=yes
 
 " =================FOLDING=====================
 autocmd Filetype python set foldmethod=indent

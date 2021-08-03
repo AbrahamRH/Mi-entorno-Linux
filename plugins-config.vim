@@ -17,9 +17,22 @@ let NERDTreeMapOpenInTab='\t'
 :let g:DoxygenToolkit_blockFooter="-------------------------------"
 
 " Colorscheme de la linea de status
+" :let g:lightline = {
+	" \ 'colorscheme': 'tokyonight'
+	" \ }
 :let g:lightline = {
-	\ 'colorscheme': 'deus'
+	\ 'colorscheme': 'tokyonight',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status'
+	\ },
 	\ }
+
+
+" Usar deus
 
 "===============Multicursor======================
 let g:multi_cursor_use_default_mapping=0
@@ -46,7 +59,7 @@ nmap <silent> gr <Plug>(coc-references)
 if &filetype == "javascript" || &filetype == "python"
     inoremap <c-space> <C-x><C-u>
 else
-    inoremap <silent><expr> <c-space> coc#refresh
+    inoremap <silent><expr> <c-space> coc#refresh()
 endif
 
 " Gatillo con el tabulador 
@@ -60,6 +73,27 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Usar K para ver la documentación
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Resaltar el cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Gatillo para completado <c-space> 
+" inoremap <silent><expr> <c-space> coc#refresh()
+
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 autocmd Filetype python let b:coc_suggest_disable = 1
 autocmd Filetype javascript let b:coc_suggest_disable = 1
@@ -84,7 +118,13 @@ let g:tagbar_show_data_type = 1
 "==================== Kite ======================
 let g:kite_supported_languages = ['*']
 
-
 "=============== Goyo y Limelight ==============
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+
+"================= Rainbow =====================
+let g:rainbow_active = 1
+let g:rainbow_guifgs = ['#3e5380', '#FF9E64', '#F7768E', '#b9f27c']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+au FileType c,cpp,objc,objcpp call rainbow#load()
