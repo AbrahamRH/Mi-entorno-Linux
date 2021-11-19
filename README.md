@@ -15,9 +15,9 @@ Para hacer uso de esta configuración realiza lo siguiente:
 
     git clone https://github.com/AbrahamRH/Vim.git ~/
 
-    mkdir ~/.config/nvim/
+    mkdir -p ~/.config/nvim/
 
-    mv ~/.vim/init.vim ~/.config/nvim/
+    cd ~/.vim/init.vim ~/.config/nvim/
 
 
 Posteriormente inicia nvim y ejecuta el comando :PlugInstall para poder hacer uso de los plugins y de los esquemas de
