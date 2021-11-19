@@ -15,6 +15,7 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'tpope/vim-fugitive'
+    Plug 'aperezdc/vim-template'
     " Sintaxis
     Plug 'frazrepo/vim-rainbow'
     Plug 'sheerun/vim-polyglot'

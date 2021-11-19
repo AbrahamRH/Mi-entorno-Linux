@@ -24,10 +24,11 @@ let NERDTreeMapOpenInTab='\t'
 	\ 'colorscheme': 'tokyonight',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified','gitbranch' ] ]
 	\ },
 	\ 'component_function': {
-	\   'cocstatus': 'coc#status'
+	\   'cocstatus': 'coc#status',
+  \   'gitbranch': 'FugitiveHead'
 	\ },
 	\ }
 
@@ -39,9 +40,9 @@ let g:multi_cursor_use_default_mapping=0
 
 " Default mapping
 let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_select_all_word_key = '<leader><C-n>'
 let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_select_all_key      = 'g<leader><C-n>'
 let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
@@ -87,10 +88,9 @@ endfunction
 
 " Resaltar el cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Gatillo para completado <c-space> 
-" inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -128,3 +128,7 @@ let g:rainbow_active = 1
 let g:rainbow_guifgs = ['#3e5380', '#FF9E64', '#F7768E', '#b9f27c']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 au FileType c,cpp,objc,objcpp call rainbow#load()
+
+"=================Templates=====================
+let g:username = "AbrahamRH"
+let g:emal = "abrahamrzhz@gmail.com"
