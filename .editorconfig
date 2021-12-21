@@ -1,0 +1,19 @@
+
+# root
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+
+#Indentación de 2 espacios
+[*.py, *.html, *.js, *.sql, *.css]
+indent_style = space
+indent_size = 4
+
+#Indentación de 4 espacios
+[*.c, *.cpp]
+indent_style = tab
+indent_size = 4
+
