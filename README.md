@@ -17,7 +17,9 @@ Para hacer uso de esta configuración realiza lo siguiente:
 
     mkdir -p ~/.config/nvim/
 
-    cd ~/.vim/init.vim ~/.config/nvim/
+    mv ~/Vim ~/.vim
+
+    cp ~/.vim/init.vim ~/.config/nvim/
 
 
 Posteriormente inicia nvim y ejecuta el comando :PlugInstall para poder hacer uso de los plugins y de los esquemas de
