@@ -26,6 +26,7 @@ call plug#begin()
     Plug 'PotatoesMaster/i3-vim-syntax'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'jaxbot/semantic-highlight.vim'
+    Plug 'StanAngeloff/php.vim'
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     " Autocompletado
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -33,6 +34,7 @@ call plug#begin()
     Plug 'alvan/vim-closetag'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'honza/vim-snippets'
     " Temas para el editor
     Plug 'sainnhe/gruvbox-material'
     Plug 'franbach/miramare'

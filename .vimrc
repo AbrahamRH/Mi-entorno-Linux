@@ -23,8 +23,8 @@ set cursorline                  " Distingue la linea actual del cursor
 set nocompatible                " Desabilita la compatibilidad con vi
 set autoindent                  " Crea una auto indentacipn de la linea anterior
 set smartindent                 " Usa una indenatacion intligente para C
-set textwidth=120               " Coloca la anchura de la pantalla a 120 caracteres
-set colorcolumn=120             " Coloca una linea en la columna en el caracter 120
+set textwidth=80               " Coloca la anchura de la pantalla a 120 caracteres
+set colorcolumn=80             " Coloca una linea en la columna en el caracter 120
 set number                      " Enciende la linea de numeros
 set showmatch                   " Subraya las llaves, parentesis, etc...
 set wildmenu                    " En el modo comando habiblita el menu de autocompletar
@@ -33,7 +33,7 @@ set mouse-=a                    " Permite usar el mouse en cualquier modo
 set noswapfile                  " Desabilita los archivos de swap
 set nobackup                    " Desabilita los backups de los archivos editados
 set nowritebackup
-set backspace=indent,eol,start	" Hace que cada retroceso fial de una linea, vuelva la line anterior
+set backspace=indent,eol,start	" Hace que cada retroceso final de una linea, vuelva la line anterior
 set undofile	        		" Aun cerrando vim, persiste el historial de cambios
 set undodir=~/.vim/undodir  	" Señala la ruta para el archivo de edicion
 set updatetime=100
