@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/media/abrahamrh/Principal/Universidad/Compiladores/Recursivo/include'
 let g:netrw_dirhist_5='/home/abrahamrh/.config/nvim'
 let g:netrw_dirhist_4='/home/abrahamrh/.config'
 let g:netrw_dirhist_3='/home/abrahamrh/.config/nvim'

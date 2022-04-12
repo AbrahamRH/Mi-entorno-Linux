@@ -1,3 +1,5 @@
+undodir/
 undodir/*
 plugged/
-/pack/*
+plugged/*
+pack/*

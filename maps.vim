@@ -1,6 +1,10 @@
 " ==================MAPEO======================
 let mapleader=" "
 
+" split resize
+noremap <leader>> 20 <C-w>>
+noremap <leader>< 20 <C-w><
+
 " En el modo normal con F3  activamos NERDTree
 command NT NERDTree
 nmap <F3> :NERDTreeToggle<cr>
@@ -31,8 +35,32 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap gX :silent :execute
             \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
 
+nnoremap <leader>kp :let @*=expand("%")<CR>
+
 " Quitar el subrayado al buscar
 map <esc> :noh<cr>
+
+
+nmap <leader>vs :call OpenVSCode()<CR>
+
+" GoTo definitions
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+
+
+" Multicursor mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<leader><C-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<leader><C-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
 
 "==================FUNCIONES====================
 
@@ -46,3 +74,8 @@ function! CambiarNumerosRelativos()
 	endif
 endfunction
 
+
+" Funcion para abrir archivo en VScode
+function! OpenVSCode()
+	:command! OpenInVSCode exe "silent !code --goto '" . expand("%") . ":" . line(".") . ":" . col(".") . "'" | redraw!
+endfunction

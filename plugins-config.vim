@@ -1,12 +1,15 @@
 "==================PLUGINS CONFG=================
 
-"=====================NERDTREE=================== 
+"==================EditorConfig==================
+let g:EditorConfig_core_mode='external_command'
+
+"=====================NERDTREE===================
 
 " Introduce el tamaño de NerdTree
-:let g:NERDTreeWinSize=20
-:let g:tagbar_width=20
-let NERDTreeQuitOnOpen=1
-let NERDTreeMapOpenInTab='\t'
+:let g:NERDTreeWinSize=30
+:let g:tagbar_width=30
+:let NERDTreeQuitOnOpen=1
+:let NERDTreeMapOpenInTab='\t'
 
 " Configuracion de los comentarios de Doxygen
 :let g:DoxygenToolkit_briefTag_pre="@brief "
@@ -32,38 +35,12 @@ let NERDTreeMapOpenInTab='\t'
 	\ },
 	\ }
 
-
-" Usar deus
-
 "===============Multicursor======================
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<leader><C-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<leader><C-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+:let g:multi_cursor_use_default_mapping=0
 
 "===================== CoC =========================
 
-" GoTo definitions
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Utilizamos kite con COC
-if &filetype == "javascript" || &filetype == "python"
-    inoremap <c-space> <C-x><C-u>
-else
-    inoremap <silent><expr> <c-space> coc#refresh()
-endif
-
-" Gatillo con el tabulador 
+" Gatillo con el tabulador
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -89,18 +66,14 @@ endfunction
 " Resaltar el cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Gatillo para completado <c-space> 
+" Gatillo para completado <c-space>
 inoremap <silent><expr> <c-space> coc#refresh()
-
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-autocmd Filetype python let b:coc_suggest_disable = 1
-autocmd Filetype javascript let b:coc_suggest_disable = 1
+autocmd Filetype python let b:coc_suggest_disable = 0
+autocmd Filetype javascript let b:coc_suggest_disable = 0
 autocmd Filetype scss setl iskeyword+=@-@
-
-"Juntar el plugin de Ale con Coc
-let g:ale_disable_lsp = 1 
 
 "================= NERDcommenter ================
 let g:NERDSpaceDelims = 1  " Agregar un espacio después del delimitador del comentario
@@ -117,6 +90,14 @@ let g:tagbar_show_data_type = 1
 
 "==================== Kite ======================
 let g:kite_supported_languages = ['*']
+" Utilizamos kite con COC
+if &filetype == "javascript" || &filetype == "python"
+    " inoremap <c-space> <C-x><C-u>
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-space> coc#refresh()
+endif
+
 
 "=============== Goyo y Limelight ==============
 autocmd! User GoyoEnter Limelight
@@ -127,13 +108,13 @@ autocmd! User GoyoLeave Limelight!
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['#3e5380', '#FF9E64', '#F7768E', '#b9f27c']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-au FileType c,cpp,objc,objcpp,php call rainbow#load()
+au FileType c,cpp,objc,objcpp,php,java,js call rainbow#load()
 
 "=================Templates=====================
 let g:username = "AbrahamRH"
 let g:emal = "abrahamrzhz@gmail.com"
 
-"=================Snippets======================
+"=================Snippets COC======================
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
