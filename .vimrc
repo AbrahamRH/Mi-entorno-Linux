@@ -2,7 +2,7 @@
 " Description: Archivo de configuration del editor de textos vim, para uso en programacion en diferentes lenguajes
 " Autor: AbrahamRH
 
-"=====================CONFIGURATION======================== 
+"=====================CONFIGURATION========================
 "Habilita la sintaxis
 set t_Co=256
 syntax enable
@@ -50,6 +50,7 @@ let javascript_fold=1
 let python_fold=1
 set foldlevelstart=0
 
+" =========== ARCHIVOS USADOS =================
 so ~/.vim/plugins.vim
 so ~/.vim/plugins-config.vim
 so ~/.vim/themes.vim

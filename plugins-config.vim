@@ -4,13 +4,13 @@
 let g:EditorConfig_core_mode='external_command'
 
 "=====================NERDTREE===================
-
 " Introduce el tamaño de NerdTree
 :let g:NERDTreeWinSize=30
 :let g:tagbar_width=30
 :let NERDTreeQuitOnOpen=1
 :let NERDTreeMapOpenInTab='\t'
 
+"=====================DOXYGEN====================
 " Configuracion de los comentarios de Doxygen
 :let g:DoxygenToolkit_briefTag_pre="@brief "
 :let g:DoxygenToolkit_paramTag_pre="@param "
@@ -19,27 +19,11 @@ let g:EditorConfig_core_mode='external_command'
 :let g:DoxygenToolkit_blockHeader="-------------------------------"
 :let g:DoxygenToolkit_blockFooter="-------------------------------"
 
-" Colorscheme de la linea de status
-" :let g:lightline = {
-	" \ 'colorscheme': 'tokyonight'
-	" \ }
-:let g:lightline = {
-	\ 'colorscheme': 'gruvbox_material',
-	\ 'active': {
-	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'cocstatus', 'readonly', 'filename', 'modified','gitbranch' ] ]
-	\ },
-	\ 'component_function': {
-	\   'cocstatus': 'coc#status',
-  \   'gitbranch': 'FugitiveHead'
-	\ },
-	\ }
 
 "===============Multicursor======================
 :let g:multi_cursor_use_default_mapping=0
 
 "===================== CoC =========================
-
 " Gatillo con el tabulador
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -103,12 +87,11 @@ endif
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-
 "================= Rainbow =====================
-let g:rainbow_active = 1
-let g:rainbow_guifgs = ['#3e5380', '#FF9E64', '#F7768E', '#b9f27c']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-au FileType c,cpp,objc,objcpp,php,java,js call rainbow#load()
+" let g:rainbow_active = 1
+" let g:rainbow_guifgs = ['#3e5380', '#FF9E64', '#F7768E', '#b9f27c']
+" let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+" au FileType c,cpp,objc,objcpp,php,java,js call rainbow#load()
 
 "=================Templates=====================
 let g:username = "AbrahamRH"
