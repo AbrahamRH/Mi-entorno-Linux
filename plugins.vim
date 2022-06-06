@@ -10,6 +10,8 @@ call plug#begin()
 
     Plug 'scrooloose/nerdtree'
 
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
     Plug 'kien/ctrlp.vim'
 
     Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -40,6 +42,16 @@ call plug#begin()
 
     Plug 'mhinz/vim-signify'
 
+    Plug 'wfxr/minimap.vim'
+
+    Plug 'voldikss/vim-floaterm'
+
+    Plug 'junegunn/fzf', {'do': {-> fzf#install() } }
+
+    Plug 'junegunn/fzf.vim'
+
+    Plug 'vimwiki/vimwiki'
+
     " ===============================
     " Plugins para la sintaxis
     " ===============================
@@ -53,6 +65,8 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
 
     Plug 'maxmellon/vim-jsx-pretty'
+
+    Plug 'justinmk/vim-syntax-extra'
 
     " ==============================
     " Plugind para el autocompletado
@@ -81,6 +95,11 @@ call plug#begin()
     Plug 'NLKNguyen/papercolor-theme'
 
     Plug 'ryanoasis/vim-devicons'
+
+    Plug 'nvim-lua/plenary.nvim'
+
+    Plug 'folke/todo-comments.nvim'
+
 
 call plug#end()
 

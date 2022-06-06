@@ -50,7 +50,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 
-
 " Multicursor mapping
 let g:multi_cursor_start_word_key      = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<leader><C-n>'
@@ -61,6 +60,22 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
+" Minimap
+nmap <leader>mm :MinimapToggle<cr>
+
+" Floaterm
+nnoremap <silent> <leader>f <C-\><C-n>:FloatermNew<CR>
+let g:floaterm_keymap_new = '<leader>f'
+nnoremap <silent> <leader>fp <C-\><C-n>:FloatermPrev<CR>
+let g:floaterm_keymap_prev = '<leader>fp'
+nnoremap <silent> <leader>fn <C-\><C-n>:FloatermNext<CR>
+let g:floaterm_keymap_next = '<leader>fn'
+nnoremap <silent> <leader>ft <C-\><C-n>:FloatermToggle<CR>
+let g:floaterm_keymap_toggle = '<leader>ft'
+
+command! FZF FloatermNew --name=fzf --title=fzf fzf
+
+command! DebugC FloatermNew --name=DebugC --title=DebugC --wintype=vsplit --width=80
 
 "==================FUNCIONES====================
 

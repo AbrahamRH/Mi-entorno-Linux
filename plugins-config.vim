@@ -1,7 +1,8 @@
 "==================PLUGINS CONFG=================
 
 "==================EditorConfig==================
-let g:EditorConfig_core_mode='external_command'
+let g:EditorConfig_core_mode='vim_core'
+let g:EditorConfig_verbose=1
 
 "=====================NERDTREE===================
 " Introduce el tamaño de NerdTree
@@ -9,6 +10,14 @@ let g:EditorConfig_core_mode='external_command'
 :let g:tagbar_width=30
 :let NERDTreeQuitOnOpen=1
 :let NERDTreeMapOpenInTab='\t'
+
+
+"================== Fuzzy ========================
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
+
+"================== Floaterm ========================
+
 
 "=====================DOXYGEN====================
 " Configuracion de los comentarios de Doxygen
@@ -19,9 +28,6 @@ let g:EditorConfig_core_mode='external_command'
 :let g:DoxygenToolkit_blockHeader="-------------------------------"
 :let g:DoxygenToolkit_blockFooter="-------------------------------"
 
-
-"===============Multicursor======================
-:let g:multi_cursor_use_default_mapping=0
 
 "===================== CoC =========================
 " Gatillo con el tabulador

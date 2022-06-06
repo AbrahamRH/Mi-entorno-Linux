@@ -1,7 +1,6 @@
 undodir/
 undodir/*
+plugged
 plugged/
 plugged/*
-./plugged/*
-./plugged
 pack/*
