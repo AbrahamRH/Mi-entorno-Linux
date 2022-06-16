@@ -52,6 +52,8 @@ call plug#begin()
 
     Plug 'vimwiki/vimwiki'
 
+    Plug 'habamax/vim-asciidoctor'
+
     " ===============================
     " Plugins para la sintaxis
     " ===============================
