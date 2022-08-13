@@ -3,3 +3,4 @@
   * [[Tareas]] Tareas
   * [[Cheatsheet]] Cheatsheet
   * [[Samba]]  Samba
+  * [[private]] Archivo privado
