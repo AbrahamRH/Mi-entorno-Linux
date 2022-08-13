@@ -1,0 +1,18 @@
+= Cheatsheet =
+
+== vimwiki ==
+
+  * ww: Abre el wikiIndex en la ventana actual.
+  * wt: Abré el wikiIndex en una nueva ventana.
+  * ws: Permite seleccionar entre los distintos archivos.
+  * wi: Abré el índice del diário del wiki.
+  * <leader>w<leader>w: Abré el archivo wiki del dia de hoy.
+  * <leader>w<leader>t: Abré el archivo wiki del dia de hoy en una pestaña.
+  * <leader>w<leader>y: Abré el archivo wiki del dia de ayer.
+
+== Fuzzy ==
+  * Helptags: Abre todos los comandos de vim.
+  * Rg: Busca entre los archivos
+
+== Floaterm ==
+  * Moverse por la terminal: <C-\><C-n>

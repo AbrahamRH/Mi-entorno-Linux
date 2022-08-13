@@ -1,0 +1,8 @@
+= Tareas pendientes =
+
+
+== Certificación Cisco ==
+
+[ ] Módulos 1 - 3
+[ ] Módulos 4 - 7
+[ ] Módulos 7 - 10

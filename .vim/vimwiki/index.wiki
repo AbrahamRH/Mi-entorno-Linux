@@ -1,0 +1,5 @@
+= Índice =
+
+  * [[Tareas]] Tareas
+  * [[Cheatsheet]] Cheatsheet
+  * [[Samba]]  Samba

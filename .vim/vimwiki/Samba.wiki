@@ -1,0 +1,10 @@
+= Comandos =
+
+== Verificamos que este corriendo samba  ==
+
+sudo systemctl status smbd
+sudo systemctl status nmbd
+
+== Cargar el servicio con la configuración ==
+
+sudo systemctl reload  smbd
