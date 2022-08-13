@@ -9,23 +9,23 @@ conjunto.
 
 ## Instalación
 
-Para hacer uso de esta configuración realiza lo siguiente:
+Para hacer uso de esta configuración clonar el repositorio
 
+    git clone https://github.com/AbrahamRH/Mi-entorno-Linux.git
 
+Una vez que se haya descargado el repositorio ejecutar el script de configuración
 
-    git clone https://github.com/AbrahamRH/Vim.git ~/
+    sudo chmod +x ~/Mi-entorno-Linux/Scripts/s-init-nvim.sh
 
-    mkdir -p ~/.config/nvim/
+    cd ~/Mi-entorno-Linux/Scripts/s-init-nvim.sh
 
-    mv ~/Vim ~/.vim
-
-    cp ~/.vim/init.vim ~/.config/nvim/
+    ./s-init-nvim.sh
 
 
 Posteriormente inicia nvim y ejecuta el comando :PlugInstall para poder hacer uso de los plugins y de los esquemas de
 colores incluidos.
 
-## Screenshots 
+## Screenshots
 
 Editando un archivo en C mostrando algunos plugins.
 
