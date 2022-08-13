@@ -3,8 +3,10 @@
 "===================Asciidoctor==================
 let g:asciidoctor_img_paste_command='xclip -selection clipboard -t image/png -o > %s%s'
 let g:asciidoctor_img_paste_pattern="img_%s_%s.png"
-
+"let g:asciidoctor_pdf_themes_path="./themes"
 let g:asciidoctor_fenced_languages=['python', 'c', 'cpp', 'javascript']
+let g:asciidoctor_pandoc_other_params='--toc'
+
 "==================EditorConfig==================
 let g:EditorConfig_core_mode='vim_core'
 let g:EditorConfig_verbose=1
