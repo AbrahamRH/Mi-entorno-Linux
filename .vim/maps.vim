@@ -77,6 +77,8 @@ command! FZF FloatermNew --name=fzf --title=fzf fzf
 
 command! DebugC FloatermNew --name=DebugC --title=DebugC --wintype=vsplit --width=80
 
+command! Ascii2BD !asciidoctor-pdf -a pdf-theme=default-theme.yml -a pdf-themesdir=./themes -a pdf-fontsdir=./fonts index.adoc
+
 "==================FUNCIONES====================
 
 " Funcion utilizada para el mapero de a tecla <F5>
