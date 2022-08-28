@@ -55,8 +55,9 @@ function configurarNvim() {
   echo "===================="
   mkdir -p ~/.config/nvim/
   mkdir -p ~/diary
-  mkdir -p ~/vimwiki
-  cp ~/.vim/init.vim ~/config/nvim/
+  touch ~/private.wiki
+
+  cp ~/.vim/init.vim ~/.config/nvim/
   echo "Listo."
 
   echo "==============="
@@ -64,7 +65,7 @@ function configurarNvim() {
   echo "==============="
   ln -s ~/Mi-entorno-Linux/.vim ~/.vim
   ln -s ~/Mi-entorno-Linux/.vim/vimwiki ~/vimwiki
-  touch ~/private.wiki
+
   if ! [ -z ~/vimwiki/diary ]; then
     rm -rf ~/vimwiki/diary
     ln -s ~/diary ~/vimwiki/diary
@@ -72,7 +73,7 @@ function configurarNvim() {
     ln -s ~/diary ~/vimwiki/diary
   fi
   if ! [ -z ~/vimwiki/private.wiki ]; then
-    rm ~/vimwiki/private.wiki
+    rm -f ~/vimwiki/private.wiki
     ln -s ~/.private.wiki ~/vimwiki/private.wiki
   else
     ln -s ~/.private.wiki ~/vimwiki/private.wiki
